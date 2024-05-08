@@ -1,0 +1,235 @@
+@font-face {
+  font-family: Galatia SIL;
+  src: url("https://www.chenhuijing.com/demos/grids-tycho/fonts/galsilb.eot");
+  src: url("https://www.chenhuijing.com/demos/grids-tycho/fonts/galsilb.eot?#iefix") format("embedded-opentype"), url("https://www.chenhuijing.com/demos/grids-tycho/fonts/galsilb.woff2") format("woff2"), url("https://www.chenhuijing.com/demos/grids-tycho/fonts/galsilb.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, :before, :after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #282828;
+  font-family: Avenir Book, Franklin Gothic Medium, Helvetica, Arial, sans-serif;
+}
+
+main {
+  max-width: 45em;
+  margin: 0 auto;
+  padding: 1em;
+  position: relative;
+}
+
+:is(_:-ms-input-placeholder, :root main) {
+  display: block;
+}
+
+h1 {
+  color: #fe320f;
+  margin-bottom: .25em;
+  font-family: Galatia SIL, Georgia, serif;
+  font-size: calc(3em + 7vw);
+}
+
+h2 {
+  text-transform: uppercase;
+  color: #a8a8a8;
+  margin-bottom: 1em;
+  font-size: calc(1em + .5vw);
+}
+
+hr {
+  opacity: 0;
+}
+
+.about {
+  margin-bottom: 1em;
+  line-height: 1.3;
+}
+
+a {
+  text-transform: uppercase;
+  color: #282828;
+  margin-bottom: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.location {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+button {
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #fe320f;
+  border: 0;
+  padding: 1em 2em;
+  font-size: 100%;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+
+@supports (display: grid) {
+  @media (width >= 42em) and (height >= 27em) {
+    main {
+      grid-template-rows: 35vh 40vh 15vh 10vh;
+      grid-template-columns: 2fr minmax(10em, max-content) minmax(14em, max-content) minmax(1em, 1fr) fit-content(28em) calc(2em + .5vw);
+      max-width: none;
+      padding: 0;
+      display: grid;
+    }
+
+    h1 {
+      z-index: 2;
+      margin-bottom: initial;
+      grid-area: 1 / 3 / 2 / 6;
+      padding-left: .25em;
+    }
+
+    h2 {
+      writing-mode: vertical-rl;
+      margin-bottom: initial;
+      color: #282828;
+      grid-area: 1 / 6 / -1 / 7;
+    }
+
+    hr {
+      background-color: #282828;
+      grid-area: 2 / 5 / auto / 6;
+      width: 20ch;
+      height: 6px;
+    }
+
+    .about {
+      margin-bottom: initial;
+      grid-area: 2 / 5 / auto / 6;
+      align-self: end;
+      padding-bottom: 4vh;
+    }
+
+    a {
+      margin-bottom: initial;
+      grid-column: 5 / 6;
+      place-self: center end;
+    }
+
+    a:before {
+      content: "";
+      background-color: #fe320f;
+      width: 4ch;
+      height: 4px;
+      margin-bottom: 1em;
+      display: block;
+    }
+
+    img {
+      grid-area: 1 / 1 / 4 / 4;
+    }
+
+    .location {
+      z-index: 2;
+      text-align: center;
+      background: #fff;
+      grid-area: 3 / 3 / 4 / 4;
+      display: flex;
+    }
+
+    .location p {
+      margin: auto;
+    }
+
+    button {
+      position: initial;
+      grid-area: 4 / 2 / 5 / 3;
+      padding: 0;
+    }
+  }
+
+  @media (width >= 48em) and (height >= 27em) {
+    hr {
+      opacity: 1;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #000078;
+  background-color: #d5faff;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+}
+
+.uoc-container {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 2rem;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
+}
+
+.uoc-logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media (width >= 420px) {
+  .uoc-logo {
+    max-width: none;
+  }
+}
+
+.uoc-title {
+  color: #000078;
+  font-family: Georgia, Times New Roman, serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media (width >= 420px) {
+  .uoc-title {
+    font-size: 36px;
+  }
+}
+
+.uoc-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: .75rem;
+}
+/*# sourceMappingURL=index.a81f0bdf.css.map */
