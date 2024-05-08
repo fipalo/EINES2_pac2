@@ -1,0 +1,37 @@
+{
+    "extends": "stylelint-config-standard",
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "at-rule-no-unknown": null,
+      "declaration-block-trailing-semicolon": "always",
+      "indentation": 2,
+      "no-descending-specificity": null,
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": ["global"]
+        }
+      ],
+      "order/order": [
+        [
+          "dollar-variables",
+          "custom-properties",
+          "declarations",
+          "rules",
+          "at-rules"
+        ]
+      ],
+      "order/properties-order": [
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "z-index",
+        "display"
+      ]
+    }
+  }
+  
