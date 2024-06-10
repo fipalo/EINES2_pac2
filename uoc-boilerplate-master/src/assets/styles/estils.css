@@ -1,0 +1,665 @@
+@charset "UTF-8";
+/**
+ * Use this file to import partials.
+ * Do not include SCSS code in this file.
+ */
+/**
+ * Import variables
+ */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+@font-face {
+  font-family: "Subjectivity";
+  src: url("/uoc-boilerplate-master/src/assets/fonts/Subjectivity/Subjectivity-Regular.otf") format("otf");
+}
+/*----------------------------------------- INICI*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: rgb(37, 74, 147);
+  font-family: Subjectivity;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+.header-wrapper {
+  padding: 1rem;
+}
+
+.blue-line {
+  display: inline-block;
+}
+
+.headerlogo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authors a {
+  color: rgb(37, 74, 147);
+  text-decoration: none;
+}
+
+.logo {
+  width: 100px;
+  margin: 2rem;
+}
+
+h1 {
+  color: rgb(60, 158, 75);
+}
+
+h2 {
+  color: rgb(229, 184, 7);
+}
+
+h1,
+h2 {
+  text-align: right;
+  font-size: 2rem;
+  margin: 0;
+  padding-top: 2px;
+}
+
+h2 {
+  writing-mode: unset;
+  -ms-writing-mode: unset;
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+}
+
+.blue-line-vertical {
+  display: inline-block;
+  border-bottom: 10px solid rgb(229, 184, 7);
+  border-right: none;
+  width: 100%;
+}
+
+.info h4 {
+  margin: 0;
+  font-weight: 300;
+  text-align: right;
+  padding: 10px 0;
+  font-size: 1.2rem;
+}
+
+.info h3 {
+  margin: 0;
+  text-align: right;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.authors {
+  text-align: right;
+  padding: 1rem;
+}
+
+.authors p {
+  margin: 0;
+  font-weight: bold;
+}
+
+footer {
+  font-size: 0.8rem;
+  padding: 1rem;
+  writing-mode: unset;
+  -ms-writing-mode: unset;
+}
+
+/*-----------------------------------------*/
+@supports (display: grid) {
+  header .header-wrapper {
+    display: grid;
+    width: 100vw;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, auto) 0.5fr;
+    grid-template-rows: 0.5fr repeat(2, auto) 1fr repeat(3, auto) 1fr;
+    padding: 0;
+  }
+  .blue-line {
+    width: 100%;
+    border-bottom: 15px solid rgb(60, 158, 75);
+    grid-column: 1/5;
+    align-self: end;
+    justify-content: start;
+    grid-row: 1;
+    border-radius: 0px 50px 50px 0px;
+  }
+  h1 {
+    grid-column: 1/5;
+    grid-row: 2;
+    margin: 0;
+    padding-top: 2px;
+  }
+  .blue-line-vertical {
+    border-right: 15px solid rgb(229, 184, 7);
+    border-bottom: none;
+    grid-column: 2;
+    grid-row: 3/end;
+    border-radius: 50px 50px 0px 0px;
+  }
+  h2 {
+    writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    margin: 0;
+    grid-column: 3;
+    grid-row: 3/5;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  .info {
+    grid-column: 4;
+    grid-row: 3/5;
+    align-self: center;
+  }
+  .authors {
+    grid-column: 4;
+    grid-row: 6;
+    font-size: 1rem;
+    padding-right: 0;
+    padding-top: 10px;
+    text-align: left;
+    padding: 10px 0 0;
+  }
+  footer {
+    grid-column: 1/end;
+    grid-row: end;
+    text-align: center;
+  }
+  /*----------------------------------------- MÒBIL*/
+  @media (min-width: 500px) {
+    header .header-wrapper {
+      grid-template-columns: 0.5fr auto auto 1fr auto auto 0.5fr;
+      grid-template-rows: 0.5fr repeat(4, auto) 1fr auto 1fr;
+    }
+    .blue-line {
+      border-bottom: 20px solid rgb(60, 158, 75);
+      grid-row: 2;
+      grid-column: 1/6;
+      border-radius: 0px 50px 50px 0px;
+    }
+    .logo {
+      width: 150px;
+      margin: 2rem;
+    }
+    h1,
+    h2 {
+      font-size: 2.5rem;
+    }
+    h1 {
+      grid-column: 1/6;
+      grid-row: 3;
+    }
+    h2 {
+      grid-row: 4/7;
+    }
+    .blue-line-vertical {
+      border-right: 20px solid rgb(229, 184, 7);
+      grid-row: 4/end;
+      border-radius: 50px 50px 0px 0px;
+    }
+    .info h4,
+    .info h3 {
+      font-size: 1.5rem;
+    }
+    .info {
+      grid-row: 5/7;
+      padding-left: 50px;
+    }
+    .authors {
+      grid-column: 5/7;
+      grid-row: 7;
+      font-size: 1rem;
+      padding-right: 10px;
+      padding-top: 0;
+    }
+    footer {
+      grid-column: 7;
+      grid-row: 1/7;
+      writing-mode: vertical-lr;
+      -ms-writing-mode: vertical-lr;
+      text-align: center;
+      padding-bottom: 0;
+    }
+    /*----------------------------------------- ESCRIPTORI*/
+  }
+  @media (min-width: 779px) {
+    header .header-wrapper {
+      grid-template-rows: 0.5fr repeat(3, auto) 0.5fr 1.5fr auto 1fr;
+    }
+    h1,
+    h2 {
+      font-size: 3.5rem;
+    }
+    .info {
+      align-self: center;
+    }
+    .info h4,
+    .info h3 {
+      font-size: 2rem;
+    }
+    footer {
+      font-size: 1rem;
+    }
+    .authors a {
+      text-align: right;
+      padding: 2rem;
+    }
+  }
+}
+/*----------------------------------------- FORMULARI D'INSCRIPCIONS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  margin: 50px auto;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+  padding: 30px;
+}
+
+.wrapper .title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: rgb(37, 74, 147);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wrapper .form {
+  width: 100%;
+}
+
+.wrapper .form .inputfield {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .form .inputfield label {
+  width: 200px;
+  color: #757575;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.wrapper .form .inputfield .input,
+.wrapper .form .inputfield .textarea {
+  width: 100%;
+  outline: none;
+  border: 1px solid #d5dbd9;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form .inputfield .textarea {
+  width: 100%;
+  height: 125px;
+  resize: none;
+}
+
+.wrapper .form .inputfield .custom_select {
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+
+.wrapper .form .inputfield .custom_select:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color: #d5dbd9 transparent transparent transparent;
+  pointer-events: none;
+}
+
+.wrapper .form .inputfield .custom_select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1px solid #d5dbd9;
+  border-radius: 3px;
+}
+
+.wrapper .form .inputfield .input:focus,
+.wrapper .form .inputfield .textarea:focus,
+.wrapper .form .inputfield .custom_select select:focus {
+  border: 1px solid rgb(37, 74, 147);
+}
+
+.wrapper .form .inputfield p {
+  font-size: 14px;
+  color: #757575;
+}
+
+.wrapper .form .inputfield .check {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.wrapper .form .inputfield .check input[type=checkbox] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.wrapper .form .inputfield .check .checkmark {
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgb(37, 74, 147);
+  display: block;
+  position: relative;
+}
+
+.wrapper .form .inputfield .check .checkmark:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 5px;
+  height: 2px;
+  border: 2px solid;
+  border-color: transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+  display: none;
+}
+
+.wrapper .form .inputfield .check input[type=checkbox]:checked ~ .checkmark {
+  background: #fec107;
+}
+
+.wrapper .form .inputfield .check input[type=checkbox]:checked ~ .checkmark:before {
+  display: block;
+}
+
+.wrapper .form .inputfield .btn {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: rgb(37, 74, 147);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+
+.wrapper .form .inputfield .btn:hover {
+  background: #ffd658;
+}
+
+.wrapper .form .inputfield:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 420px) {
+  .wrapper .form .inputfield {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper .form .inputfield label {
+    margin-bottom: 5px;
+  }
+  .wrapper .form .inputfield.terms {
+    flex-direction: row;
+  }
+}
+/*----------------------------------------- RECEPTES*/
+.cards {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  max-width: 820px;
+}
+
+.card--1 .card__img, .card--1 .card__img--hover {
+  background-image: url("https://www.mariaantoniamartinez.com/media/k2/items/cache/74cb8ada7a7c2004573daaf7e046bcf6_XL.jpg");
+}
+
+.card--2 .card__img, .card--2 .card__img--hover {
+  background-image: url("https://www.mariaantoniamartinez.com/media/k2/items/cache/53992c98d42a66e2ef891e71fd0f9e40_XL.jpg");
+}
+
+.card__like {
+  width: 18px;
+}
+
+.card__clock {
+  width: 15px;
+  vertical-align: middle;
+  fill: rgb(60, 158, 75);
+}
+
+.card__time {
+  font-size: 12px;
+  color: rgb(60, 158, 75);
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.card__clock-info {
+  float: right;
+}
+
+.card__img {
+  visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 235px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card__info-hover {
+  position: absolute;
+  padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+}
+
+.card__img--hover {
+  transition: 0.2s all ease-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: absolute;
+  height: 235px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  top: 0;
+}
+
+.card {
+  margin-right: 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  width: 33.3%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1, 1.1);
+}
+
+.card__info {
+  z-index: 2;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: rgb(60, 158, 75);
+}
+
+.card__title {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.card__by {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card__author {
+  font-weight: 600;
+  text-decoration: none;
+  color: #F2A6B3;
+}
+
+.card:hover .card__img--hover {
+  height: 100%;
+  opacity: 0.3;
+}
+
+.card:hover .card__info {
+  background-color: transparent;
+  position: relative;
+}
+
+.card:hover .card__info-hover {
+  opacity: 1;
+}
+
+.recetari {
+  padding: 5rem 20rem 5rem 20rem;
+}
+
+/*----------------------------------------- GALERIA*/
+.participants {
+  display: flex;
+  justify-content: right;
+  margin: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
+
+.heading {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  padding: 3.5rem 0;
+  color: #1a1a1a;
+}
+
+.heading span {
+  display: block;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer gallery flex items */
+  margin: 30%;
+}
+
+.gallery-item {
+  /* Minimum width of 24rem and grow to fit available space */
+  flex: 1 0 24rem;
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin: 1rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+  transform: scale(1.15);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 2rem;
+  }
+  .gallery,
+  .gallery-item {
+    margin: 0;
+  }
+}
+/**
+ * Import npm dependencies
+ * see: https://v2.parceljs.org/features/module-resolution/
+ * see commented examples below
+ */
+/**
+ * Import layouts
+ * It's a best practice to use a different partial for each page
+ */
+/**
+ * Do NOT include anything else in this file!
+ */
+
+/*# sourceMappingURL=estils.css.map */
